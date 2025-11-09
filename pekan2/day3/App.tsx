@@ -1,9 +1,24 @@
-import { View, Text } from "react-native";
-import React from "react";
-import RootNavigator from "./src/routes/RootNavigator";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import RootNavigator from './src/routes/RootNavigator';
+import { ThemeProvider } from './src/context/ThemeContext';
 
 export default function App() {
-    return (
+  return (
+
+    <ThemeProvider>
+
+      <View style={styles.container}>
         <RootNavigator />
-    )
+      </View>
+
+    </ThemeProvider>
+
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
